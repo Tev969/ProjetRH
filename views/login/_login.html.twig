@@ -1,24 +1,22 @@
-	<div class="title">
-	</div>
+<div class="login-form">
+<h1 class="loginH1">Connecter vous ici.</h1>
 	<form action="./login" method="post">
-		<div class="mail">
-			<label for="mail">Votre mail</label>
-			<input id="mail" name="mail" type="text">
+		<div class="form-group">
+			<label for="emails">Votre adresse e-mail</label>
+			<input id="emails" name="emails" type="text" required>
 			{% if error %}
-				<p>{{error.error.name.message}}</p>
+				<p class="error-message">{{ error.error.name.message }}</p>
 			{% endif %}
 		</div>
-		<div class="password">
-			<label for="pass">Votre password</label>
-			<input id="pass" name="password" type="text">
+		<div class="form-group">
+			<label for="passwords">Votre mot de passe</label>
+			<input id="passwords" name="passwords" type="password" required>
 			{% if error %}
-				<p>{{error.error.name.message}}</p>
+				<p class="error-message">{{ error.error.name.message }}</p>
 			{% endif %}
-
 		</div>
-        <div class="send">
-        <button>Envoyer</button>
-        </div>
+		<div class="form-group">
+			<button class="sendBtn" type="submit">Envoyer</button>
+		</div>
 	</form>
-
-
+</div>

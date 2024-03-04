@@ -1,0 +1,188 @@
+*  {
+    min-width: 0;
+    font: inherit;
+    }
+    
+    *, *::before, *::after {
+         box-sizing: border-box;
+    }
+    
+    img, video , svg {
+         display: block;
+         height: auto;
+         max-width: 100%;
+    }
+    
+    body {
+        font-family: 'League Spartan', sans-serif;
+         margin: 0;
+         min-height: 100dvh;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+         text-wrap: balance;
+    }
+    
+    p {
+         text-wrap: pretty;
+    }
+
+
+
+footer {
+  font-family: "League Spartan";
+  background-color: #b9babb;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/*​‌‌‍⁡⁢⁣⁢ 𝗗𝗔𝗦𝗛𝗕𝗢𝗔𝗥𝗗⁡​ */
+
+.dashBoardContainer {
+  margin-top: 275px;
+  text-align: center;
+}
+
+.dashBoardContainer h1 {
+  font-family: "League Spartan";
+  font-size: 2em;
+  margin-top: 50px; /* Ajoute un espace au-dessus du titre */
+}
+
+.dashBoardContainer a {
+  font-family: "League Spartan";
+  display: inline-block;
+  padding: 20px 20px;
+  margin: 10px;
+  border: 2px solid #4caf50; /* Couleur de la bordure */
+  border-radius: 5px; /* Coins arrondis */
+  text-decoration: none;
+  color: #4caf50; /* Couleur du texte */
+  font-weight: bold;
+  transition: all 0.3s ease; /* Effet de transition fluide */
+}
+
+.dashBoardContainer a:hover {
+  background-color: #4caf50; /* Couleur de fond au survol */
+  color: white; /* Couleur du texte au survol */
+}
+
+
+/* ​‌‌‍⁡⁢⁣⁢𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘 ⁡​*/
+
+
+.registrationForm {
+    width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.subscribe {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.inputGroup {
+    margin-bottom: 20px;
+}
+
+.inputGroup label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.inputGroup input[type="text"],
+.inputGroup input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submitGroup {
+    text-align: center;
+}
+
+.submitGroup button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submitGroup button:hover {
+    background-color: #03922e;
+}
+
+
+/*​‌‌‍⁡⁢⁣⁢ 𝗟𝗢𝗚𝗜𝗡⁡​ */
+
+.loginH1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.7rem;
+}
+
+
+.login-form {
+    width: 300px; /* Largeur du formulaire */
+    margin: auto; /* Centre le formulaire horizontalement */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease;
+}
+
+.login-form:hover {
+    transform: translate(-50%, -50%) scale(1.05); /* Agrandit le formulaire de 5% */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.error-message {
+    color: red;
+    margin-top: 5px;
+}
+
+.sendBtn {
+    width: 100%; /* Bouton de largeur totale */
+    padding: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sendBtn:hover {
+    background-color: #0056b3;
+}
