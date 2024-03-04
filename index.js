@@ -1,10 +1,13 @@
 const config = require("dotenv");
+const twig = require("twig")
 const express = require("express");
 const session = require("express-session");
 const mongoose = require("mongoose");
+const dashBoardRouter = require("./src/routers/dashboardRouter");
+require("dotenv").config();
 
 const app = express();
-app.use(express.static("./assets"))
+app.use(express.static("./assets"));
 app.use(express.urlencoded({ extended: true }));
 app.use(
   session({
@@ -13,6 +16,9 @@ app.use(
     saveUninitialized: true,
   })
 );
+
+app.use(dashBoardRouter)
+
 app.listen(parseInt(process.env.PORT) , (err) => {
     if (err) {
         console.log(err);
@@ -21,4 +27,4 @@ app.listen(parseInt(process.env.PORT) , (err) => {
     }
 });
 
-mongoose.connect(process.env.URLBDD)
+mongoose.connect(process.env.URLBDD);
