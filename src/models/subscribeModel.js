@@ -13,7 +13,7 @@ const subscribeSchema = new mongoose.Schema({
     },
   },
 
-  sirret: {
+  siret: {
     type: Number,
     required: [true, "N de sirret requis"],
     validate: {
@@ -24,11 +24,10 @@ const subscribeSchema = new mongoose.Schema({
     },
   },
 
-  mail: {
+  email: {
     type: String,
     required: [true, "mail requis"],
     unique: true,
-
     validate: {
       validator: function (v) {
         return /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/g.test(v);
@@ -64,7 +63,7 @@ subscribeSchema.pre("validate", async function (next) {
   try {
     const existingUser = await this.constructor.findOne({ email: this.email });
     if (existingUser) {
-      this.invalidate("email", "Cet email est éjà enregistré.");
+      this.invalidate("email", "Cet email est déjà enregistré.");
     }
     next();
   } catch (error) {

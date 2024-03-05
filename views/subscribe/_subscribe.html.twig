@@ -1,40 +1,40 @@
 <section class="registrationForm">
 	<div class="title"></div>
-	<form action="/login" method="post">
+	<form action="/subscribe" method="post">
 		<h1 class="subscribe">Inscription</h1>
 		<div class="inputGroup">
 			<label for="name">Votre nom</label>
 			<input id="name" name="name" placeholder="Name.." type="text" required>
 			{% if error %}
-				<p>{{error.error.name.message}}</p>
+				<p class="error">{{error.errors.name.message}}</p>
 			{% endif %}
 		</div>
 		<div class="inputGroup">
-			<label for="mail">Votre mail</label>
-			<input id="mail" name="mail" placeholder="@" type="text" required>
+			<label for="email">Votre email</label>
+			<input id="email" name="email" placeholder="@" type="text" required>
 			{% if error %}
-				<p>{{error.error.name.message}}</p>
+				<p class="error">{{error.errors.email.message}}</p>
 			{% endif %}
 		</div>
 		<div class="inputGroup">
-			<label for="pass">Votre password</label>
-			<input id="pass" name="password" placeholder="****" type="text" required>
+			<label for="password">Votre password</label>
+			<input id="password" name="password" placeholder="****" type="text" required>
 			{% if error %}
-				<p>{{error.error.name.message}}</p>
+				<p class="error">{{error.errors.password.message}}</p>
 			{% endif %}
 		</div>
 		<div class="inputGroup">
 			<label for="siret">Numéro de SIRET</label>
 			<input id="siret" name="siret" placeholder="143 654 754" type="text" required>
 			{% if error %}
-				<p>{{error.error.name.message}}</p>
+				<p class="error">{{error.errors.siret.message}}</p>
 			{% endif %}
 		</div>
 		<div class="inputGroup">
 			<label for="directorName">Nom du directeur</label>
 			<input id="directorName" name="directorName" placeholder="Director Name.." type="text" required>
 			{% if error %}
-				<p>{{error.error.name.message}}</p>
+				<p class="error">{{error.errors.directorName.message}}</p>
 			{% endif %}
 		</div>
 		<div class="submitGroup">

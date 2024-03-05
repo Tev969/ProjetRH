@@ -1,34 +1,58 @@
-*  {
-    min-width: 0;
-    font: inherit;
-    }
-    
-    *, *::before, *::after {
-         box-sizing: border-box;
-    }
-    
-    img, video , svg {
-         display: block;
-         height: auto;
-         max-width: 100%;
-    }
-    
-    body {
-        font-family: 'League Spartan', sans-serif;
-         margin: 0;
-         min-height: 100dvh;
-    }
-    
-    h1, h2, h3, h4, h5, h6 {
-         text-wrap: balance;
-    }
-    
-    p {
-         text-wrap: pretty;
-    }
+* {
+  min-width: 0;
+  font: inherit;
+}
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+img,
+video,
+svg {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
 
+body {
+  background-image: linear-gradient(
+    to right bottom,
+    #043470,
+    #00397f,
+    #003d8d,
+    #00419c,
+    #0045ab,
+    #3753b7,
+    #5362c3,
+    #6b72cf,
+    #9493db,
+    #bab6e7,
+    #dddaf3,
+    #ffffff
+  );
+  margin: 0;
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+.error {
+  color: red;
+}
 footer {
   font-family: "League Spartan";
   background-color: #b9babb;
@@ -47,142 +71,154 @@ footer {
 }
 
 .dashBoardContainer h1 {
+  color: white;
   font-family: "League Spartan";
-  font-size: 2em;
+  font-size: 2.5em;
   margin-top: 50px; /* Ajoute un espace au-dessus du titre */
 }
 
 .dashBoardContainer a {
   font-family: "League Spartan";
   display: inline-block;
-  padding: 20px 20px;
+  padding: 25px 25px;
   margin: 10px;
-  border: 2px solid #4caf50; /* Couleur de la bordure */
+  border: 2px solid #ffffff; /* Couleur de la bordure */
   border-radius: 5px; /* Coins arrondis */
   text-decoration: none;
-  color: #4caf50; /* Couleur du texte */
+  color: #ffffff; /* Couleur du texte */
   font-weight: bold;
   transition: all 0.3s ease; /* Effet de transition fluide */
 }
 
 .dashBoardContainer a:hover {
-  background-color: #4caf50; /* Couleur de fond au survol */
-  color: white; /* Couleur du texte au survol */
+  background-color: #f8f8f8; /* Couleur de fond au survol */
+  color: rgb(63, 71, 237); /* Couleur du texte au survol */
 }
-
 
 /* ​‌‌‍⁡⁢⁣⁢𝗦𝗨𝗕𝗦𝗖𝗥𝗜𝗕𝗘 ⁡​*/
 
-
 .registrationForm {
-    width: 400px;
-    margin: 50px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .subscribe {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 2rem;
+    font-family: "League Spartan";
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
 }
 
 .inputGroup {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .inputGroup label {
-    display: block;
-    margin-bottom: 5px;
+  display: block;
+  margin-bottom: 5px;
 }
 
 .inputGroup input[type="text"],
 .inputGroup input[type="password"] {
-    width: calc(100% - 20px);
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .submitGroup {
-    text-align: center;
+  text-align: center;
 }
 
 .submitGroup button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .submitGroup button:hover {
-    background-color: #03922e;
+  background-color: #03922e;
 }
-
 
 /*​‌‌‍⁡⁢⁣⁢ 𝗟𝗢𝗚𝗜𝗡⁡​ */
 
 .loginH1 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.7rem;
+    font-family: "League Spartan";
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.7rem;
+  color: whitesmoke;
 }
 
-
 .login-form {
-    width: 300px; /* Largeur du formulaire */
-    margin: auto; /* Centre le formulaire horizontalement */
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: transform 0.3s ease;
+    font-family: "League Spartan";
+  width: 300px; /* Largeur du formulaire */
+  margin: auto; /* Centre le formulaire horizontalement */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .login-form:hover {
-    transform: translate(-50%, -50%) scale(1.05); /* Agrandit le formulaire de 5% */
+  transform: translate(-50%, -50%) scale(1.05); /* Agrandit le formulaire de 5% */
 }
 
 .form-group {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 label {
-    display: block;
-    margin-bottom: 5px;
+    font-family: "League Spartan";
+  display: block;
+  margin-bottom: 5px;
+  color: white;
 }
 
 input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    font-family: "League Spartan";
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .error-message {
-    color: red;
-    margin-top: 5px;
+  color: red;
+  margin-top: 5px;
 }
 
 .sendBtn {
-    width: 100%; /* Bouton de largeur totale */
-    padding: 10px;
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  width: 100%; /* Bouton de largeur totale */
+  padding: 10px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .sendBtn:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }

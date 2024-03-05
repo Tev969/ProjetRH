@@ -1,9 +1,8 @@
 const subscribeModel = require('../models/subscribeModel');
-const userModel = require('../models/userModel');
 const userRouter = require('express').Router();
 const mongoose = require("mongoose")
 const bcrypt = require("bcrypt");
-
+const authguard = require('../../services/authguard')
 
 
 
@@ -15,10 +14,15 @@ userRouter.get('/subscribe' , (req,res) => {
 userRouter.post("/subscribe" , async (req,res) => {
     try {
         const user = new subscribeModel(req.body);
+        user.validateSync()
+        console.log("mes couilles");
         await user.save();
-        res.redirect('/login')
+        req.session.user = user._id
+        res.redirect('/principalPage')
     } catch (error) {
-        res.render('login/index.html.twig')
+        console.log(error);
+        console.log(req.body);
+        res.render('subscribe/index.html.twig',{error: error})
     }
 })
 
@@ -32,21 +36,33 @@ userRouter.get('/login' , (req,res) => {
 
 userRouter.post('/login' , async (req,res) => {
     try {
-        let user = await userModel.findOne({ email: req.body.email}, { password: 0}) // on recherche l'utilisateur
+        let user = await subscribeModel.findOne({ email: req.body.email}) // on recherche l'utilisateur
         if (user) { // si il existe
+            console.log(user.password);
+            console.log(req.body);
             if (await bcrypt.compare(req.body.password, user.password)) { // on compare les mdp
                 req.session.user = user // on stockrs user en session
-                res.redirect('/pagePrincipale') // on redidrige vers le panel admin
+                req.session.firstConnect = "Vous vous etes connecter avec succes"
+                res.redirect('/principalPage') // on redidrige vers le panel admin
             } else {
+
                 throw {password: 'Mauvais mot de passe'}
             }
         }  else {
-            throw {email: "Utilisateur introuvable"}
+            throw {email: 'Email incorect'}
         }
     } catch (error) {
-        res.render('login/index.html.twig')
+        console.log(error);
+        res.render('login/index.html.twig' , {
+            title:"Connexion",
+            error: error
+        })
     }
 })
 
+
+userRouter.get('/principalPage' , authguard , (req,res) => {
+    res.render('principalPage/index.html.twig')
+})
 
 module.exports = userRouter

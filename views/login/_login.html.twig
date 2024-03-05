@@ -1,18 +1,18 @@
 <div class="login-form">
 <h1 class="loginH1">Connecter vous ici.</h1>
-	<form action="./login" method="post">
+	<form action="/login" method="post">
 		<div class="form-group">
 			<label for="emails">Votre adresse e-mail</label>
-			<input id="emails" name="emails" type="text" required>
+			<input id="emails" name="email" type="text" required>
 			{% if error %}
-				<p class="error-message">{{ error.error.name.message }}</p>
+				<p class="error-message">{{ error.email }}</p>
 			{% endif %}
 		</div>
 		<div class="form-group">
 			<label for="passwords">Votre mot de passe</label>
-			<input id="passwords" name="passwords" type="password" required>
+			<input id="passwords" name="password" type="password" required>
 			{% if error %}
-				<p class="error-message">{{ error.error.name.message }}</p>
+				<p class="error-message">{{ error.password }}</p>
 			{% endif %}
 		</div>
 		<div class="form-group">
