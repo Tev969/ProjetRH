@@ -1,0 +1,16 @@
+<header>
+<div class="headerContainer">
+	<ul class="nav">
+		{% if user.id %}
+
+			<li>
+				<a class="addEmployee" href="/addEmployee">Ajouter un employé</a>
+			</li>
+			<li>
+				<a class="logout" href="/logout">Déconnexion</a>
+			</li>
+
+		{% endif %}
+	</ul>
+    </div>
+</header>

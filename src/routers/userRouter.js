@@ -15,7 +15,6 @@ userRouter.post("/subscribe" , async (req,res) => {
     try {
         const user = new subscribeModel(req.body);
         user.validateSync()
-        console.log("mes couilles");
         await user.save();
         req.session.user = user._id
         res.redirect('/principalPage')
@@ -61,8 +60,11 @@ userRouter.post('/login' , async (req,res) => {
 })
 
 
-userRouter.get('/principalPage' , authguard , (req,res) => {
-    res.render('principalPage/index.html.twig')
+userRouter.get('/principalPage' , authguard , async(req,res) => {
+    res.render('principalPage/index.html.twig' ,
+     {
+        user: await subscribeModel.findById(req.session.user._id)
+    })
 })
 
 module.exports = userRouter

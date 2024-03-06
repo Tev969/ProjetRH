@@ -19,19 +19,12 @@ svg {
 
 body {
   background-image: linear-gradient(
-    to right bottom,
-    #043470,
-    #00397f,
-    #003d8d,
-    #00419c,
-    #0045ab,
-    #3753b7,
-    #5362c3,
-    #6b72cf,
-    #9493db,
-    #bab6e7,
-    #dddaf3,
-    #ffffff
+    to bottom,
+    #0b60f4,
+    #4678eb,
+    #6c8ede,
+    #8fa3ce,
+    #b3b6bc
   );
   margin: 0;
   min-height: 100dvh;
@@ -111,7 +104,7 @@ footer {
 }
 
 .subscribe {
-    font-family: "League Spartan";
+  font-family: "League Spartan";
   text-align: center;
   margin-bottom: 20px;
   font-size: 2rem;
@@ -155,7 +148,7 @@ footer {
 /*​‌‌‍⁡⁢⁣⁢ 𝗟𝗢𝗚𝗜𝗡⁡​ */
 
 .loginH1 {
-    font-family: "League Spartan";
+  font-family: "League Spartan";
   text-align: center;
   margin-bottom: 20px;
   font-size: 1.7rem;
@@ -163,7 +156,7 @@ footer {
 }
 
 .login-form {
-    font-family: "League Spartan";
+  font-family: "League Spartan";
   width: 300px; /* Largeur du formulaire */
   margin: auto; /* Centre le formulaire horizontalement */
   background-color: #ffffff;
@@ -190,14 +183,14 @@ footer {
 }
 
 label {
-    font-family: "League Spartan";
+  font-family: "League Spartan";
   display: block;
   margin-bottom: 5px;
   color: white;
 }
 
 input {
-    font-family: "League Spartan";
+  font-family: "League Spartan";
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -221,4 +214,72 @@ input {
 
 .sendBtn:hover {
   background-color: #0056b3;
+}
+
+/* PAGE PRINCIPALE HEADER */
+
+.headerContainer {
+  display: flex;
+  justify-content: center; /* Couleur de fond de la barre de navigation */
+  padding: 15px 20px; /* Espacement interne de la barre de navigation */
+  box-shadow: 12px 4px 12px 3px rgb(255 255 255 / 15%); /* Ombre légère pour la profondeur */
+}
+
+.nav {
+  list-style: none; /* Supprimer les puces de la liste */
+  margin: 0; /* Supprimer les marges par défaut */
+  padding: 0; /* Supprimer le remplissage par défaut */
+}
+
+.nav li {
+  display: inline-block; /* Afficher les éléments de la liste en ligne */
+  margin-right: 250px; /* Espacement entre les éléments de la liste */
+}
+
+.nav li:last-child {
+  margin-right: 0; /* Supprimer l'espacement à droite du dernier élément */
+}
+
+.nav a {
+  font-size: 1.3rem;
+  font-family: "League Spartan";
+  text-decoration: none; /* Supprimer la décoration de lien par défaut */
+  color: #ffffff; /* Couleur du texte des liens */
+  font-weight: bold; /* Mettre en gras le texte des liens */
+  transition: transform 0.3s;
+}
+
+.nav a:hover {
+  color: #000000; /* Couleur du texte des liens au survol */
+  transform: scale(1.1);
+}
+
+
+/* EMPLOYEE */
+
+
+.block-contain {
+    display: flex;
+    justify-content: center;
+    margin-top: 55px;
+}
+
+.H1Employee {
+    font-family: "League Spartan";
+    font-size: 2rem;
+    color: white;
+    font-weight: 600;
+}
+
+.H1Employee {
+    font-family: "League Spartan";
+    font-size: 2rem;
+    color: white;
+    font-weight: 600;
+    transition: transform 0.4s;
+}
+
+.H1Employee:hover {
+    transform: scale(1.2);
+    
 }

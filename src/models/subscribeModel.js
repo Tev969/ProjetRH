@@ -57,6 +57,11 @@ const subscribeSchema = new mongoose.Schema({
       message: "Enter valid password",
     },
   },
+
+  employeeCollection: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Employee"
+  }]
 });
 
 subscribeSchema.pre("validate", async function (next) {
