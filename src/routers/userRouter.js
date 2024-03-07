@@ -35,11 +35,11 @@ userRouter.get('/login' , (req,res) => {
 
 userRouter.post('/login' , async (req,res) => {
     try {
-        let user = await subscribeModel.findOne({ email: req.body.email}) // on recherche l'utilisateur
+        let user = await subscribeModel.findOne({ email: req.body.email}) // on recherche l'
         if (user) { // si il existe
             console.log(user.password);
             console.log(req.body);
-            if (await bcrypt.compare(req.body.password, user.password)) { // on compare les mdp
+            if ( bcrypt.compareSync(req.body.password, user.password)) { // on compare les mdp
                 req.session.user = user // on stockrs user en session
                 req.session.firstConnect = "Vous vous etes connecter avec succes"
                 res.redirect('/principalPage') // on redidrige vers le panel admin
@@ -63,8 +63,19 @@ userRouter.post('/login' , async (req,res) => {
 userRouter.get('/principalPage' , authguard , async(req,res) => {
     res.render('principalPage/index.html.twig' ,
      {
-        user: await subscribeModel.findById(req.session.user._id)
+        user: await subscribeModel.findById(req.session.user._id).populate('employeeCollection')
     })
 })
+
+/*
+dans la route de blame :
+
+tu recupere ton employe
+tu prend son nombre de blame et tu l'incremente,
+Si blame > 3
+on delete l'utilisateur
+sinon, on reviens sur le dashboard
+
+*/
 
 module.exports = userRouter

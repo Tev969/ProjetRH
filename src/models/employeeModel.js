@@ -37,5 +37,9 @@ employeeSchema.pre("save", async function (next) {
   next()
 });
 
+employeeSchema.post('deleteOne' , async function (next) {
+    const deletedEmployeeId = this.getQuery()._id;
+})
+
 const employeeModel = mongoose.model("employee", employeeSchema);
 module.exports = employeeModel;

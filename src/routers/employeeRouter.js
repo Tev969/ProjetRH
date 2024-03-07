@@ -27,8 +27,20 @@ employeeRouter.post('/addEmployee' , authguard, multer.single('photo') , async (
         res.redirect("/principalPage")
     } catch (error) {
         res.render('addEmployee/index.html.twig' , {
-            user: await subscribeModel.findById(req.session.user._id.populate('employeeCollection')),
+            user: await subscribeModel.findById(req.session.user._id).populate('employeeCollection'),
             error: error,
+        })
+    }
+})
+
+employeeRouter.get('/deleteEmployee/:employeeid' , authguard , async (res,req) => {
+    try {
+        await employeeModel.deleteOne({ _id: req.params.employeeid})
+        res.redirect('/principalPage')
+    } catch (error) {
+        res.render('principalPage/index.html.twig' , {
+            errorDelete: "Probleme survenue lors du delete",
+            user: await subscribeModel.findById(req.session.user._id).populate('employeeCollection')
         })
     }
 })
@@ -36,4 +48,8 @@ employeeRouter.post('/addEmployee' , authguard, multer.single('photo') , async (
 
 
 
+
 module.exports = employeeRouter
+
+
+

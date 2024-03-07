@@ -1,15 +1,25 @@
 <section class="page-container">
-<div class="block-contain">
-<h1 class="H1Employee">Liste de vos employés</h1>
-</div>
-<div class="listEmployee">
-{% for employee in user.employeeCollection %}
-    <div>
-    <h2 class="employeeName">{{employee.name}}</h2>
-    </div>
-    <p class="employeeFonction"> {{employee.fonction }}</p>
-     <p class="employeeBlame"> {{employee.blame }}</p>
-{% endfor %}
-</div>
-
+	<div class="block-contain">
+		<h1 class="H1Employee">Liste de vos employés</h1>
+	</div>
+	<div class="listEmployee">
+		{% for employee in user.employeeCollection %}
+			<div class="employee-card">
+				<img src="/images/uploads/{{employee.photo }}" alt="" class="employee-photo">
+				<div class="employee-details">
+					<h2 class="employeeName">Nom :
+						{{employee.name}}</h2>
+					<p class="employeeFonction">Fonction actuelle :
+						{{employee.fonction }}</p>
+					<p class="employeeBlame">Blâmes :
+						{{employee.blame }}</p>
+				</div>
+				<div class="employee-actions">
+					<a class="delete" href="/deleteEmployee/:{{employee.id }}">Supprimer</a>
+                    <a class="blame" href="/blameEmployee">Blâmer</a>
+					<a class="update" href="/updateEmployee">Modifier</a>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
 </section>

@@ -342,3 +342,69 @@ input {
 .add-employee-button:hover {
   background-color: #0056b3; /* Bleu légèrement plus foncé */
 }
+
+/* TODO EMPLOYEE CARDS */
+.employee-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 50vw;
+}
+
+.employee-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.employee-details {
+    flex-grow: 1;
+}
+
+.employee-actions a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 5px 10px;
+    margin-left: 5px;
+    border-radius: 5px;
+    font-family: "League Spartan";
+    font-size: 1rem;
+}
+
+.employee-actions .delete {
+    background-color: #e74c3c;
+    transition: transform 0.4s;
+}
+
+.employee-actions .delete:hover {
+transform: scale(1.1);
+}
+
+
+.employee-actions .blame {
+    background-color: #3498db;
+}
+
+.employee-actions .update {
+    background-color: #2ecc71;
+}
+
+.employeeName {
+    font-family: "League Spartan";
+    font-size: 1.1rem;
+} 
+.employeeFonction {
+    font-family: "League Spartan";
+    font-size: 1.1rem;
+}
+.employeeBlame {
+    font-family: "League Spartan";
+    font-size: 1.1rem;
+}
