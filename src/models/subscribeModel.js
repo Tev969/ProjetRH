@@ -60,7 +60,7 @@ const subscribeSchema = new mongoose.Schema({
 
   employeeCollection: [{
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Employee"
+    ref: "employee"
   }]
 });
 

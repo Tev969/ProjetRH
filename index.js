@@ -5,6 +5,7 @@ const session = require("express-session");
 const mongoose = require("mongoose");
 const dashBoardRouter = require("./src/routers/dashboardRouter");
 const userRouter = require("./src/routers/userRouter");
+const employeeRouter = require("./src/routers/employeeRouter")
 require("dotenv").config();
 
 const app = express();
@@ -20,6 +21,7 @@ app.use(
 
 app.use(dashBoardRouter);
 app.use(userRouter);
+app.use(employeeRouter)
 
 app.listen(parseInt(process.env.PORT), (err) => {
   if (err) {

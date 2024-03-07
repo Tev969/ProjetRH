@@ -241,7 +241,7 @@ input {
 }
 
 .nav a {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-family: "League Spartan";
   text-decoration: none; /* Supprimer la décoration de lien par défaut */
   color: #ffffff; /* Couleur du texte des liens */
@@ -254,32 +254,91 @@ input {
   transform: scale(1.1);
 }
 
-
 /* EMPLOYEE */
 
-
 .block-contain {
-    display: flex;
-    justify-content: center;
-    margin-top: 55px;
+  display: flex;
+  justify-content: center;
+  margin-top: 55px;
 }
 
 .H1Employee {
-    font-family: "League Spartan";
-    font-size: 2rem;
-    color: white;
-    font-weight: 600;
+  font-family: "League Spartan";
+  font-size: 2rem;
+  color: white;
+  font-weight: 600;
 }
 
 .H1Employee {
-    font-family: "League Spartan";
-    font-size: 2rem;
-    color: white;
-    font-weight: 600;
-    transition: transform 0.4s;
+  font-family: "League Spartan";
+  font-size: 2rem;
+  color: white;
+  font-weight: 600;
+  transition: transform 0.4s;
 }
 
 .H1Employee:hover {
-    transform: scale(1.2);
-    
+  transform: scale(1.2);
+}
+
+/* Formulaire add employer */
+
+.add-employee-container {
+    padding-top: 55px;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 17px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-employee-title {
+  color: #007bff; /* Bleu */
+  font-size: 2rem;
+  font-family: "League Spartan";
+}
+
+.add-employee-form {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-size: 1.3rem;
+  display: block;
+  margin-bottom: 5px;
+  color: #333333; /* Noir */
+  font-weight: bold;
+}
+
+#photo {
+    border-radius: 10px;
+}
+
+.form-input {
+  width: 100%;
+  border: 1.5px solid #ced4da; /* Gris clair */
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.add-employee-button {
+  background-color: #007bff; /* Bleu */
+  color: #ffffff; /* Blanc */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-employee-button:hover {
+  background-color: #0056b3; /* Bleu légèrement plus foncé */
 }

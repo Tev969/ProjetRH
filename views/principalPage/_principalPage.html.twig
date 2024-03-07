@@ -1,8 +1,15 @@
 <section class="page-container">
 <div class="block-contain">
 <h1 class="H1Employee">Liste de vos employés</h1>
-
 </div>
-
+<div class="listEmployee">
+{% for employee in user.employeeCollection %}
+    <div>
+    <h2 class="employeeName">{{employee.name}}</h2>
+    </div>
+    <p class="employeeFonction"> {{employee.fonction }}</p>
+     <p class="employeeBlame"> {{employee.blame }}</p>
+{% endfor %}
+</div>
 
 </section>

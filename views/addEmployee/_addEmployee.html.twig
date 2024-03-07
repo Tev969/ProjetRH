@@ -1,0 +1,22 @@
+<div class="container add-employee-container">
+    <h2 class="add-employee-title">Ajouter un employé ici.</h2>
+    <form class="add-employee-form" action="/addEmployee" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="photo" class="form-label">Photo de l'employé :</label>
+            <input type="file" id="photo" name="photo" class="form-input">
+        </div>
+        <div class="form-group">
+            <label for="name" class="form-label">Nom de votre employé :</label>
+            <textarea id="name" name="name" rows="4" class="form-input" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="fonction" class="form-label">Poste occupé :</label>
+            <input type="text" id="fonction" name="fonction" class="form-input" required>
+        </div>
+        <div class="form-group">
+            <label for="blame" class="form-label">Nombre de blâme :</label>
+            <input type="number" id="blame" name="blame" max="5" class="form-input" required>
+        </div>
+        <button type="submit" class="add-employee-button">Ajouter un employé</button>
+    </form>
+</div>
