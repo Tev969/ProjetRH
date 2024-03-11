@@ -1,7 +1,11 @@
 <section class="page-container">
 	<div class="block-contain">
-		<h1 class="H1Employee">Liste de vos employés</h1>
+		<form action="/principalPage" method="get">
+			<input type="text" action="/get" id="searchInput" class="search-input" name="filterFunction" placeholder="Rechercher par fonctions...">
+		</form>
+
 	</div>
+	<h1 class="H1Employee">Liste de vos employés</h1>
 	<div class="listEmployee">
 		{% for employee in user.employeeCollection %}
 			<div class="employee-card">
@@ -15,9 +19,9 @@
 						{{employee.blame }}</p>
 				</div>
 				<div class="employee-actions">
-					<a class="delete" href="/deleteEmployee/:{{employee.id }}">Supprimer</a>
-                    <a class="blame" href="/blameEmployee">Blâmer</a>
-					<a class="update" href="/updateEmployee">Modifier</a>
+					<a class="delete" href="/deleteEmployee/{{employee.id}}">Supprimer</a>
+					<a class="blame" href="/blameEmployee/{{employee.id }}">Blâmer</a>
+					<a class="update" href="/updateEmployee/{{employee.id }}">Modifier</a>
 				</div>
 			</div>
 		{% endfor %}

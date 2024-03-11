@@ -58,10 +58,12 @@ const subscribeSchema = new mongoose.Schema({
     },
   },
 
-  employeeCollection: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "employee"
-  }]
+  employeeCollection: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "employee",
+    },
+  ],
 });
 
 subscribeSchema.pre("validate", async function (next) {

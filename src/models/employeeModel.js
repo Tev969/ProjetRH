@@ -26,6 +26,7 @@ const employeeSchema = new mongoose.Schema({
 
   blame: {
     type: Number,
+    default: 0,
   },
 });
 
@@ -34,12 +35,16 @@ employeeSchema.pre("save", async function (next) {
     { _id: this._user },
     { $addToSet: { employeeCollection: this._id } }
   );
-  next()
+  next();
 });
 
-employeeSchema.post('deleteOne' , async function (next) {
-    const deletedEmployeeId = this.getQuery()._id;
-})
+employeeSchema.post("deleteOne", async function (next) {
+  const deletedEmployeeId = this.getQuery()._id;
+  await subscribeModel.updateOne(
+    { employeeCollection: { $in: [deletedEmployeeId] } },
+    { $pull: { employeeCollection: deletedEmployeeId } }
+  );
+});
 
 const employeeModel = mongoose.model("employee", employeeSchema);
 module.exports = employeeModel;
