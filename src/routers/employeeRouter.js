@@ -62,8 +62,7 @@ employeeRouter.get(
 employeeRouter.get(
   "/updateEmployee/:employeeid",
   authguard,
-  async (req, res) => {
-    try {
+  async (req, res) => {   try {
       let employee = await employeeModel.findById(req.params.employeeid);
       res.render("updateEmployee/index.html.twig", {
         user: await employeeModel.findById(req.session.user._id),
@@ -71,7 +70,7 @@ employeeRouter.get(
       });
     } catch (error) {
       console.log(error);
-      res.render("principalPage/index.html.twig", {
+      res.render("principalPage/index.html.twig" {
         user: await subscribeModel
           .findById(req.session.user._id)
           .populate("employeeCollection"),
@@ -140,12 +139,9 @@ employeeRouter.get("/search", (req, res) => {
     (err, employees) => {
       if (err) {
         console.error(err);
-        return res
-          .status(500)
-          .json({
-            error:
-              "Une erreur s'est produite lors de la recherche des employés.",
-          });
+        return res.status(500).json({
+          error: "Une erreur s'est produite lors de la recherche des employés.",
+        });
       }
       // Retournez les résultats de la recherche au format JSON
       res.json(employees);
