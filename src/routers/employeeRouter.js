@@ -70,7 +70,7 @@ employeeRouter.get(
       });
     } catch (error) {
       console.log(error);
-      res.render("principalPage/index.html.twig" {
+      res.render("principalPage/index.html.twig", {
         user: await subscribeModel
           .findById(req.session.user._id)
           .populate("employeeCollection"),
@@ -78,7 +78,7 @@ employeeRouter.get(
         user: await employeeModel.findById(req.session.user._id),
       });
     }
-  }
+}
 );
 
 employeeRouter.post(

@@ -31,4 +31,8 @@ app.listen(parseInt(process.env.PORT), (err) => {
   }
 });
 
+app.get("*" , (req,res)=> {
+    res.redirect("/dashboard")
+})
+
 mongoose.connect(process.env.URLBDD);
